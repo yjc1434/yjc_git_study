@@ -9,8 +9,17 @@
 # 제한 사항
 # 두 수는 1이상 1000000이하의 자연수입니다.
 
+def gcd(n, m):
+    if n == 0:
+        return m
+    return gcd(m%n,n)
+
+def lcm(n,m):
+    g = gcd(n,m)
+    return g * (n / g) * (m / g)
+
 def solution(n, m):
-    answer = []
+    answer = [gcd(n,m),lcm(n,m)]
     return answer
 
 print(solution(3,12)) # 3,12
