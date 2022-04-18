@@ -11,7 +11,6 @@
 # 문자열 s는 알파벳으로만 이루어져 있습니다.
 
 def solution(s):
-    s = s.upper()
-    return s.count("P") == s.count("Y")
+    return s.upper().count("P") == s.upper().count("Y")
 
 print(solution("Pyy"))
