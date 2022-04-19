@@ -22,15 +22,10 @@
 #     return answer.count(True) - 1
 
 def solution(n):
-    numbers = [i + 1 for i in range(n)]
-    
-    for i in numbers:
-        if i > 1:
-            for j in range(i, numbers[-1]):
-                print("i=",i,"j=",j)
-                if numbers[j] != -1:
-                    if numbers[j] % i == 0:
-                        numbers[j] = -1
-    return numbers
+    num = set(range(2, n+1))
+    for i in range(2, n+1):
+        if i in num:
+            num -= set(range(2*i, n+1, i))
+    return len(num)
 
 print(solution(10))
