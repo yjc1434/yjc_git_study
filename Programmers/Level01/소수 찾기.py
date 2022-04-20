@@ -22,10 +22,11 @@
 #     return answer.count(True) - 1
 
 def solution(n):
-    num = set(range(2, n+1))
-    for i in range(2, n+1):
+    num = set(range(2, n+1)) # {2,3,4,5,6,7,8,9,10}
+    for i in range(2, n+1): # i = 2; i <= 10
         if i in num:
-            num -= set(range(2*i, n+1, i))
-    return len(num)
+            num -= set(range(2*i, n+1, i)) # i의 배수의 집합을 생성한 뒤, num에서 제외
+    return len(num) # 남은 배열의 원소 갯수 리턴
 
 print(solution(10))
+
